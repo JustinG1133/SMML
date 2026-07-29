@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+
+smml_env/
+
+*.png
+
+*.csv
+
+.vscode/
+.spyproject/
+
+.ipynb_checkpoints/
