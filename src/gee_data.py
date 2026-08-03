@@ -35,13 +35,23 @@ def load_dem(AOI):
 		.clip(AOI)
 		)
 
-def create_sample_stack(smap, ndvi, dem):
+def load_sentinel1(AOI, start_date, end_date):
+	return (
+		ee.ImageCollection(config.SENTINEL1_DATASET)
+		.filterBounds(AOI)
+		.filterDate(start_date, end_date)
+		.select(config.SENTINEL1_BANDS)
+		.mean()
+	)
+
+
+def create_sample_stack(smap, ndvi, dem, sentinel1):
 
     smap_mean = smap.mean().select(config.SMAP_BAND)
 
     ndvi_mean = ndvi.mean().select(config.NDVI_BAND)
     dem = dem.select(config.DEM_BAND)
-
+    sentinel_mean = sentinel1.select(config.SENTINEL1_BANDS)
 
     sample_stack = smap_mean.addBands(ndvi_mean)
     sample_stack = sample_stack.addBands(dem)

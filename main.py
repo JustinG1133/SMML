@@ -31,8 +31,8 @@ def main():
         	ndvi = gee_data.load_ndvi(AOI, start_date, end_date)
 
         	dem = gee_data.load_dem(AOI)
-
-        	sample_stack = gee_data.create_sample_stack(smap, ndvi, dem)
+        	sentinel1 = gee_data.load_sentinel1(AOI, start_date, end_date)
+        	sample_stack = gee_data.create_sample_stack(smap, ndvi, dem, sentinel1)
 
         	samples = gee_data.sample_stack(sample_stack, AOI)
 

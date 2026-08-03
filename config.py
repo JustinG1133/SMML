@@ -9,7 +9,8 @@ AOI = "projects/ee-jgray/assets/MS_AOI"
 
 # Start / End date for the study period
 TIME_PERIODS = [
-	("2024-06-01", "2024-06-30"),
+	("2024-06-01", "2024-06-15"),
+	("2024-06-16", "2024-06-30"),
 	("2024-07-01", "2024-07-31"),
 	("2024-08-01", "2024-08-31"),
 	("2024-09-01", "2024-09-30"),
@@ -21,7 +22,7 @@ TIME_PERIODS = [
 SMAP_DATASET = "NASA/SMAP/SPL3SMP_E/006"
 
 NDVI_DATASET = "MODIS/061/MOD13Q1"
-
+SENTINEL1_DATASET = "OPERA/RTC/L2_V1/S1"
 DEM_DATASET = "JAXA/ALOS/AW3D30/V4_1"
 
 # Bands to use
@@ -29,7 +30,7 @@ SMAP_BAND = [
     "soil_moisture_am",
     "vegetation_water_content_am"
 ]
-
+SENTINEL1_BANDS = ["VV", "VH"]
 NDVI_BAND = "NDVI"
 
 DEM_BAND = "DSM"
